@@ -6,10 +6,13 @@ const parent=React.createElement(
     React.createElement(
         "div",
         {id : "child"},[
-        React.createElement("h1",{},"This is an H1 tag !"),
-        React.createElement("h2",{},"This is an H2 tag !"),
-        React.createElement("h3",{},"This is an H3 tag !"),
-        React.createElement("h4",{},"This is an H4 tag !"),
+        React.createElement("h1",{},"               JO SEEKHTA HAI HAAR SE ,    "),
+        React.createElement("h1",{},"        WO HARA NHI !       "),
+        React.createElement("h1",{},"              "),
+        React.createElement("h1",{},"     JO JALTA HAI AAP SE ,          "),
+        React.createElement("h1",{},"       WO TARA NAHI !       "),
+        React.createElement("h1",{},"     JO JALTA HAI AAG SE ,          "),
+        React.createElement("h1",{},"       HAI TARA WAHI !       "),
     ])
 );
 console.log("parent");
