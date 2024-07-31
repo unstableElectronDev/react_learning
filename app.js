@@ -1,12 +1,13 @@
 //const heading= React.createElement("h1",{id: "heading_as_attribute"},"KYA SCENE H BAAVE, SEEKH LE kYA SAB KUCCH!");
-
+import React from "react";
+import ReactDOM from "react-dom/client"
 const parent=React.createElement(
     "div",
     {id: "parent"},
     React.createElement(
         "div",
         {id : "child"},[
-        React.createElement("h1",{},"               JO SEEKHTA HAI HAAR SE ,    "),
+        React.createElement("h1",{},"               JO SEEKHTA HAI HAAR SE🚀🚀 ,    "),
         React.createElement("h1",{},"        WO HARA NHI !       "),
         React.createElement("h1",{},"              "),
         React.createElement("h1",{},"     JO JALTA HAI AAP SE ,          "),
