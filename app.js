@@ -16,6 +16,6 @@ const parent=React.createElement(
         React.createElement("h1",{},"       HAI TARA WAHI !       "),
     ])
 );
-console.log("parent");
+console.log("");
 const root= ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
