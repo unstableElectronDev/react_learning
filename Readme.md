@@ -21,3 +21,6 @@
 - HTTPS
 - Tree shaking (removes unused code)
 - Different dev and production Bundles
+
+
+# Babel is the beast.

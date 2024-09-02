@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -23,11 +23,10 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  }
-  ,
-  "browserslist":[
+    "react-dom": "^18.3.1",
+    "shimmer": "^1.2.1"
+  },
+  "browserslist": [
     "last 2 versions"
   ]
-  
 }
