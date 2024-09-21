@@ -1,99 +1,383 @@
+/* /////HEADER//////// */
+
+/* Header Styles */
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border: 5px solid black;
-  }
-  
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  justify-content: space-between; /* Space between the logo and nav items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding for spacing */
+  border: 3px solid black;
+  box-sizing: border-box; /* Include padding and border in width/height calculations */
+  width: 100%; /* Full width of the header */
+  max-width: 1200px; /* Maximum width for larger screens */
+  margin: 0 auto; /* Center header for wider screens */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Logo Styles */
+.logo-container {
+  flex-shrink: 0; /* Prevent the logo from shrinking */
+  margin-right: 20px; /* Add spacing between logo and nav items */
+}
+
+.logo {
+  width: 100px; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  transition: opacity 1s ease-in-out; /* Smooth transition for fading */
+}
+
+/* Navigation Items */
+.nav-items {
+  display: flex; /* Flex container for nav items */
+  flex-grow: 1; /* Allow navigation items to grow */
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between nav items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-items > ul {
+  display: flex; /* Keep items in a row */
+  align-items: center; /* Center items vertically */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px; /* Space between items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-items > ul > li {
+  padding: 0 5px; /* Spacing around each item */
+  margin: 0;
+}
+
+.nav-items a,
+.nav-items button {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size for better fit */
+}
+
+/* Cart Icon */
+.cart {
+  width: 25px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+}
+
+/* Login Button */
+.LogIn {
+  width: auto; /* Auto width for flexibility */
+  height: auto; /* Adjust height for content */
+  padding: 0.5rem 0.8rem; /* Add padding for better look */
+  font-size: 14px; /* Consistent font size */
+  cursor: pointer;
+  background-color: #fff; /* Optional background color for visibility */
+  border: 1px solid black; /* Optional border for better visibility */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  /* For tablets and smaller screens */
   .logo {
-    margin: 10px;
-    width: 200px;
+    width: 80px; /* Slightly smaller logo */
   }
-  
-  .nav-items {
-    padding-left: 20px;
+
+  .nav-items a,
+  .nav-items button {
+    font-size: 12px; /* Smaller font size */
   }
-  
-  .nav-items > ul {
-    font-size: 20px;
-    display: flex;
-    list-style-type: none;
+
+  .LogIn {
+    padding: 0.4rem; /* Adjust padding for smaller screens */
   }
-  
+}
+
+@media (max-width: 768px) {
+  /* For smaller tablets and larger mobile devices */
+  .header {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .logo {
+    width: 70px; /* Smaller logo */
+  }
+
+  .nav-items a,
+  .nav-items button {
+    font-size: 11px; /* Smaller font size */
+  }
+
+  .LogIn {
+    padding: 0.3rem 0.5rem; /* Smaller button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* For mobile devices */
+  .header {
+    padding: 5px; /* Reduce padding for mobile */
+  }
+
+  .logo {
+    width: 60px; /* Smaller logo for mobile */
+  }
+
   .nav-items > ul > li {
-    padding: 20px;
-    margin: 10px;
-  }
-  
-  .cart {
-    width: 25px;
-  }
-  
-  .restaurantContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0 auto;
-  }
-  
-  .restaurantCard {
-    margin: 10px;
-    padding: 5px;
-    width: 200px;
-    height: 400px;
-    background-color: #eeeaea;
-    transition: border 0.3s ease;
-  }
-  
-  .restaurantCard:hover {
-    border: 5px solid #000;
-    cursor: pointer;
-  }
-  
-  .search {
-    padding: 10px;
-  }
-  
-  .res-logo {
-    width: 200px;
-    height: 150px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 3px; /* Smaller padding for mobile */
   }
 
-  .rating-dropdown{
-    width:150px;
-    height:23px;
-    background-color: #c3c0c0;
+  .nav-items a,
+  .nav-items button {
+    font-size: 10px; /* Smaller font size for smaller mobile devices */
   }
 
-  .shimmer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center align shimmer lines */
+  .LogIn {
+    padding: 0.2rem 0.4rem; /* Smaller button padding */
+    font-size: 10px; /* Smaller font size for button */
   }
-  
-  .shimmer-line {
-    margin: 10px;
-    width: 200px;
-    height: 400px;
-    background-color: #ded9d9; /* Lighter background color */
-    animation: shimmer 1.5s infinite; /* Add shimmer animation */
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+/* Restaurant Container */
+.restaurantContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0 auto;
+}
+
+.restaurantCard {
+  margin: 10px;
+  padding: 5px;
+  width: 230px;
+  height: 385px;
+  background-color: #eeeaea;
+  transition: border 0.3s ease;
+  border: 3px solid #c3c1c1;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(182, 177, 177);
+  gap: 5px; /* Adjust gap as needed */
+  position: relative; /* Make the card a positioned container */
+}
+
+.res-deliveryTime {
+  position: absolute; /* Position the delivery time element absolutely */
+  bottom: 0px; /* Fixed distance from the bottom */
+  left: 0px; /* Fixed distance from the left */
+  padding: 4px 8px; /* Optional: padding for better spacing */
+  font-size: 14px; /* Adjust font size as needed */
+  z-index: 1; /* Ensure it is above other elements */
+}
+
+.restaurantCard:hover {
+  border: 3px solid #000;
+  cursor: pointer;
+}
+
+/* Search Styles */
+.search {
+  padding: 10px;
+}
+
+/* Res Logo */
+.res-logo {
+  padding: 0;
+  width: 215px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease;
+  border: 0px solid #c3c1c1;
+  border-radius: 6px;
+  /* box-shadow: 0 3px 0 3px  rgb(205, 209, 209); */
+}
+
+
+/* Rating Dropdown */
+.rating-dropdown {
+  width: 150px;
+  height: 23px;
+  background-color: #c3c0c0;
+}
+
+/* Shimmer Effect */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align shimmer lines */
+}
+
+.shimmer-line {
+  margin: 10px;
+  width: 200px;
+  height: 400px;
+  background-color: #ded9d9; /* Lighter background color */
+  animation: shimmer 1.5s infinite; /* Add shimmer animation */
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
   }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: -200px 0;
-    }
-    100% {
-      background-position: 200px 0;
-    }
+  100% {
+    background-position: 200px 0;
   }
-  .LogIn{
-    width:70px;
-    height:50px;
-  }
-  
+}
+
+
+/* Menu Container */
+/* Container for Restaurant Menu */
+
+.restaurantMenu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Arrange items horizontally */
+  align-items: center; /* Align items vertically */
+  border: 3px solid #c3c1c1;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgb(0, 0, 0);
+  background-color: rgb(242, 239, 239);
+  max-width: 800px;
+  width: 100%;
+  gap: 20px; /* Adjust gap as needed */
+}
+
+/* Menu Image */
+.menu-image {
+  flex: 1;
+  max-width: 150px; /* Adjust max-width as needed */
+  max-height: 200px; /* Adjust max-height as needed */
+  box-shadow: 0 1px 6px rgba(25, 0, 255, 0);
+}
+
+.menu-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 1px 6px rgb(240, 3, 3);
+}
+
+/* Restaurant Menu Text */
+.restaurantMenu h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.restaurantMenu h5 {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px ;
+}
+
+.restaurantMenu h5.price {
+  color: #ec0a0a;
+  font-weight: bold;
+}
+/* Styles for Restaurant Menu Container */
+.res-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Center-align list */
+.res-menu ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  width: 100%; /* Full width for list items */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.res-menu li {
+  width: 100%; /* Full width for list items */
+  display: flex;
+  justify-content: center; /* Center item content */
+  margin: 10px 0; /* Margin between items */
+}
+.menu-heading {
+  background-color: #cfdad8; /* Bright background color */
+  color: #14100170; /* Contrasting text color */
+  font-family: 'Courier New', Courier, monospace; /* Unique font style */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgb(11, 0, 0); /* Add a shadow effect */
+  margin: 20px 0; /* Add margin for spacing */
+  letter-spacing: 2px; /* Increase spacing between letters */
+  text-transform: uppercase; /* Transform text to uppercase */
+  height:80px;
+}
+.resName-menu {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 3.5rem; /* Large font size for prominence */
+  font-weight: bold; /* Make the text bold */
+  color: #2c3e50; /* Dark slate color for a classy look */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Transform text to uppercase for impact */
+  letter-spacing: 4px; /* Increase letter spacing for elegance */
+  margin: 30px 0; /* Spacing above and below the text */
+  padding: 10px; /* Padding for better spacing */
+  border-bottom: 4px solid #e74c3c; /* Stylish underline */
+  display: inline-block; /* Allows the underline to be the width of the text */
+  position: relative; /* For positioning the shadow effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.resName-menu:hover {
+  color: #e74c3c; /* Color change on hover */
+  letter-spacing: 10px; /* Slight increase in spacing on hover */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  border-bottom-color: #2c3e50; /* Border color swap */
+}
+
+
+
+
+/* //////////////////////RESTAURANT TO MENU LINK TAB////////////////// */
+/* Link Styles */
+.link {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Optional: Make text bold */
+}
+
+.link:hover {
+  text-decoration: none; /* No underline on hover */
+}
+.rescard-costfortwo{
+  position: absolute;
+  bottom :27px;
+  left :8px;
+}
+.rescard-cuisines{
+  position: absolute;
+  top :225px;
+  left :8px;
+}
+.user-card{
+  padding:10px;
+  border:2px solid black;
+  font-style: italic;
+  /* color: #e74c3c; */
+}

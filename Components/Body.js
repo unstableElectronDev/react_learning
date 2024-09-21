@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/Mockdata";
 import Shimmer from './Shimmer.js';
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // State to hold the original list of restaurants
@@ -27,8 +28,7 @@ const Body = () => {
       const fetchedRestaurants = json?.data?.cards || [];
       const filteredRestaurants = fetchedRestaurants.filter(
         (restaurant) =>
-          restaurant.card?.card["@type"] ===
-          "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
+          restaurant.card?.card
       );
 
       setOriginalListOfRestaurants(filteredRestaurants);
@@ -68,7 +68,7 @@ const Body = () => {
     setSelectedRating(''); // Clear selected rating in dropdown
     setSearchInput(''); // Clear search input
   };
-
+  //SEARCH
   const handleSearchChange = (event) => {
     const input = event.target.value;
     setSearchInput(input);
@@ -81,6 +81,8 @@ const Body = () => {
     } else {
       setListOfRestaurants(originalListOfRestaurants); // Reset if search input is empty
     }
+    
+
   };
   if (listOfRestaurants.length === 0) {
     console.log("Displaying Shimmer..."); // Debug log
@@ -118,18 +120,21 @@ const Body = () => {
         </select>
       </div>
       <div className="restaurantContainer" style={{ display: 'flex', overflowX: 'scroll' }}>
-        {/* Ensure listOfRestaurants is an array before mapping */}
-        {
-          listOfRestaurants.map((restaurant) =>
-            restaurant.card?.card?.info ? (
-              <RestaurantCard
-                key={restaurant.card.card.info.id}
-                resData={restaurant.card.card}
-                className="restaurantCard"
-              />
-            ) : null
-          )}
-      </div>
+      {listOfRestaurants.map((restaurant) =>
+        restaurant.card?.card?.info ? (
+          <Link
+            key={restaurant.card.card.info.id}
+            to={"/restaurant/" + restaurant.card.card.info.id}
+            className="link"  // Apply the CSS class here
+          >
+            <RestaurantCard
+              resData={restaurant.card.card}
+              className="restaurantCard"
+            />
+          </Link>
+        ) : null
+      )}
+    </div>
     </div>
   );
 };

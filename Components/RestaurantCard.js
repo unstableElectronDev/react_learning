@@ -13,14 +13,14 @@ let RestaurantCard = (props) => {
                     }}
                 />
             </div>
-            <h3>{resData.info.name}</h3>
-            <h5>{resData.info.cuisines.join(", ")}</h5>
-            <h5>{resData.info.costForTwo}</h5>
-            <div className="rating" style={{ backgroundColor: '#90EE90', width: '40px' }}>
+            <h4>{resData.info.name}</h4>
+            <div className="rescard-cuisines"><h5>{resData.info.cuisines.join(", ")}</h5></div>
+            <div className="rescard-costfortwo"><h5>{resData.info.costForTwo}</h5></div>
+            <div className="rating" style={{ backgroundColor: '#90EE90', width: '45px' ,position:'absolute',bottom:'10px',right:'13px',borderRadius:'6px'}}>
                 <span>{resData.info.avgRating}</span>
                 <span>★</span>
             </div>
-            <h5>{resData.info.sla.deliveryTime} minutes</h5>
+            <div className="res-deliveryTime"><h5>⏱️{resData.info.sla.deliveryTime} minutes</h5></div>
         </div>
     );
 }
