@@ -6,7 +6,6 @@ import About from "./Components/About.js";
 import Contact from "./Components/Contact.js";
 import { createBrowserRouter,RouterProvider ,Outlet} from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu.js";
-import Login from "./Components/LoginAndSignup.js";
 
 
 const AppLayout = () => {
