@@ -1,0 +1,64 @@
+
+.header{
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  justify-content: space-between; /* Space between the logo and nav items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding for spacing */
+  border: 3px solid black;
+  box-sizing: border-box; /* Include padding and border in width/height calculations */
+  width: 100%; /* Full width of the header */
+  margin: 0 auto; /* Center header for wider screens */
+  overflow: hidden; /* Prevent content overflow */
+  background-color: #8b4513;
+}
+.logo{
+  width:400px;
+  height: 100px;
+}
+.wearOptions {
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  justify-content: flex-start; /* Aligns items to the left */
+  gap: 20px; /* Adds 20px of space between elements */
+  align-items: center; /* Center items vertically */
+  padding: 0 10px; /* Padding for spacing */
+}
+
+.wearOptions h2:hover {
+  cursor: pointer;
+}
+.cart-button{
+  width: 150px;
+  height: 100px;
+  background-color: #8b4513;
+  border-color: white;
+  border-width: 5px;
+}
+/* Cart Button Styling */
+.cart-button {
+  background-color: #563636; /* Blue background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Cart Count Badge Styling */
+.cart-count {
+  background-color: red; /* Red background for the badge */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  
+  border-radius: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}

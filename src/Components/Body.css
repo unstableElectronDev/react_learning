@@ -1,0 +1,139 @@
+/* src/Components/Body.css */
+
+/* Title Styling */
+.body-title {
+    text-align: center;
+    font-size: 2.5rem; /* Large title font */
+    margin: 30px 0; /* Spacing above and below the title */
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr)); /* Flexible columns */
+    gap: 20px 50px; /* Space between cards */
+    padding: 20px; /* Padding around the grid */
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+    padding: 20px; /* Inner spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    justify-content: space-between; /* Space between elements */
+    height: 95%; /* Ensure consistent height */
+}
+
+/* Hover Effect for Product Card */
+.product-card:hover {
+    transform: translateY(-10px); /* Subtle upward movement */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Product Image Styling */
+.product-image {
+    width: 100%; /* Full width */
+    height: 500px; /* Fixed height for consistent layout */
+    object-fit: cover; /* Crop image nicely */
+    border-bottom: 1px solid #ddd; /* Separator below the image */
+}
+
+/* Product Info Styling */
+.product-info {
+    padding: 10px; /* Inner spacing */
+    flex-grow: 1; /* Push content to fill the card */
+}
+
+/* Product Title Styling */
+.product-title {
+    font-size: 1.5rem; /* Large product name */
+    font-weight: bold; /* Emphasize the title */
+    margin: 10px 0; /* Space around the title */
+}
+
+/* Product Price Styling */
+.product-price {
+    font-size: 1.3rem; /* Highlight price */
+    color: #333; /* Neutral color */
+    margin: 10px 0; /* Space below the price */
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart-btn {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 15px 20px; /* Larger button */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2rem; /* Large button text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    width: 50%; /* Button spans half of its container width */
+    display: block; /* Block-level element */
+    text-align: left; /* Align text to the left */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover Effect for Add to Cart Button */
+.add-to-cart-btn:hover {
+    background-color: #555; /* Lighter shade */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Quantity Input Styling */
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* View Cart Link Styling */
+.view-cart-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.view-cart-link:hover {
+    background-color: #0056b3;
+}
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-selector label {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.quantity-selector input {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

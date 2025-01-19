@@ -1,16 +1,17 @@
 {
-  "name": "namaste-react",
+  "name": "React App",
   "version": "1.0.0",
   "description": "My first react learning project",
   "main": "app.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html",
+    "test": "jest",
+    "clean": "rm -rf .parcel-cache dist"
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/SharmaVaibhavVats/react_learning)"
+    "url": "https://github.com/SharmaVaibhavVats/react_learning"
   },
   "keywords": [
     "react"
@@ -18,16 +19,20 @@
   "author": "VAIBHAV SHARMA",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0",
+    "parcel": "^2.13.3",
     "process": "^0.11.10"
   },
   "dependencies": {
-    "react": "^18.3.1",
+    "react": "^18.2.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.1",
-    "shimmer": "^1.2.1"
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^6.28.0",
+    "shimmer": "^1.2.1",
+    "styled-components": "^6.1.13"
   },
   "browserslist": [
-    "last 2 versions"
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
   ]
 }
